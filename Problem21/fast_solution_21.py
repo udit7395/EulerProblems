@@ -19,7 +19,8 @@ for a in range(2, limit):
     for b in range(2, int(math.sqrt(a)) + 1):
         if is_divisible_by_x(a, b):
             proper_divisors_list.append(b)
-            proper_divisors_list.append(a//b)
+            if(a//b != b):
+                proper_divisors_list.append(a//b)
     proper_divisors_dict[a] = sum(proper_divisors_list)
     
 amicable_numbers = []
